@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap');
+
+*{
+    border: none;
+    padding: 0;
+    margin: 0 auto;
+    box-sizing: border-box;
+    --icon_left:url('./img/play-24.png');
+    --icon_right:url('./img/icons8-replace-24.png');
+    
+
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background:rgb(11, 8, 90);
+}
+
+.wrapper{
+    display: flex;
+    align-items:center;
+    flex-direction: column;
+    width: 375px;
+    height: 752px;
+    background: #070417;
+    border-radius: 24px;
+    padding: 20px 40px;
+}
+
+.title{
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 20px;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+   
+
+
+}
+
+.circle{
+    margin-top: 30px;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: #1B143F;
+    display: flex;
+    align-items:center;
+}
+
+.time{
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 32px;
+
+    /* identical to box height, or 80% */
+    text-align: center;
+    letter-spacing: 2px;
+
+    color: #FFFFFF;
+}
+
+
+.btns{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    cursor: pointer;
+}
+
+
+
+.icon {
+    background: #292639;
+    border-radius:50%;
+    width: 60px;
+    height: 60px;
+    transition: all 0.5s;
+    position: relative;
+}
+.icon__left::after{
+    content:"";
+    position:absolute;
+    width: 24px;
+    height: 24px;
+    top: 18px;
+    left: 18px;
+    
+    background:var(--icon_left) 50% no-repeat ;
+}
+
+.icon__right::after{
+    content:"";
+    position:absolute;
+    width: 24px;
+    height: 24px;
+    top: 18px;
+    left: 18px;
+    
+    background:var(--icon_right) 50% no-repeat ;
+}
+.icon:hover{
+    transform: translateY(-5px);
+}
+
+.icon:hover+.name{
+    color:rgb(255, 255, 255);
+}
+
+.name{
+    margin-top: 16px;
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+    text-align: center;
+    /* Gray 4 */
+    color: #BDBDBD;
+    transition: all 0.5s;
+    text-transform: uppercase;
+}
+
+
+.loop{
+    margin-top: 10px;
+    border-top: 1px solid grey;
+    width: 100%;
+}
+
+.loop__item{
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 32px;
+    letter-spacing: 2px;
+    color: #FFFFFF;
+    padding: 10px 0;
+    border-bottom: 1px solid grey;
+}
+
+
+/* taimer */
+
+.box{
+    margin-top: 10px;
+    position: relative;
+    width: 300px;
+    height: 300px;
+    
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.box .percent{
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+
+.box .percent svg{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    transform: rotate(-85deg);
+  
+}
+
+.box .percent svg circle{
+    width: 300px;
+    height: 300px;
+    fill: none;
+    stroke-width: 15;
+    stroke: black;
+    transform: translate(15px,15px);
+    stroke-dasharray: 880;
+    stroke-dashoffset: 880;
+    stroke-linecap: round;
+   
+}
+
+.box .percent svg circle:nth-child(1){
+    stroke-dashoffset: 0;
+    stroke: rgba(87, 0, 90, 0.274);
+}
+.box .percent svg circle:nth-child(2){
+    stroke-dashoffset: 880;
+    stroke:rgb(171, 5, 177);
+    
+}
+
+.anim{
+    animation: inf 2s linear infinite;
+}
+
+
+@keyframes inf{
+    0%{
+        stroke-dashoffset: 880;
+        stroke:rgb(255, 255, 255);
+    }
+    50%{
+        stroke-dashoffset: 0;
+        stroke:rgb(171, 5, 177);
+    }
+
+    51%{
+        stroke-dashoffset: 880;
+        stroke:rgb(171, 5, 177);
+    }
+    100%{
+        stroke-dashoffset: 0;
+        stroke:rgb(255, 255, 255);
+    }
+}
+
+.time{
+    position: absolute;
+    top:135px;
+    left: 50px;
+  
+}
