@@ -250,6 +250,7 @@ body{
 
 
 
+
 @media (orientation:landscape) and (max-width:1400px) {
 
     body{
@@ -371,6 +372,14 @@ body{
 
 
 
+@media (orientation:portrait) and (max-width:800px) {
+    :root{
+       
+        --dash:880;
+        
+    }
+}
+
 @media (orientation:portrait) and (max-height:800px)  {
     
     
@@ -428,6 +437,27 @@ body{
     .btns{
         margin-top: 0px;
     }
+
+
+    .icon{
+        width: 30px;
+        height: 30px;
+    }
+
+    .icon::after{
+        width: 12px;
+        height: 12px;
+        top: 9px;
+        left: 9px;
+    }
+
+    .name{
+        margin-top: 0px;
+        font-size: 8px;
+        line-height:16px;
+    }
    
 }
+
+
 
